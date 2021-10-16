@@ -45,7 +45,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.questions[questionNumber].questionText,
+                quizBrain.getQuestion(questionNumber).questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -79,7 +79,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
           onPressed: () {
-            Question question = quizBrain.questions[questionNumber];
+            var question = quizBrain.getQuestion(questionNumber);
             if(question.questionText == type){
               //Correct
             } else {
